@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartão de balcão A5 · QR Code | Gislaine Lopes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page{size:A5 portrait;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#d9d4cb;font-family:'Jost',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 0}
+  .instr{font-size:13px;color:#444;max-width:148mm;text-align:center}
+  .card{width:148mm;height:210mm;background:radial-gradient(120% 70% at 50% 0%,#4d3222 0%,#2b1a12 50%,#140c08 100%);color:#f8f1e7;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:13mm 12mm 10mm;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+  .card::before{content:"";position:absolute;inset:6mm;border:0.4mm solid rgba(201,164,92,.55);pointer-events:none}
+  .marca{font-family:'Cormorant Garamond',serif;letter-spacing:.42em;font-size:10pt;color:#e6c88f;text-transform:uppercase}
+  .d{display:inline-block;width:2mm;height:2mm;background:#c79a52;transform:rotate(45deg);margin:0 3mm;vertical-align:middle}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:37pt;line-height:1;margin-top:9mm;color:#fff}
+  h1 em{color:#e6c88f}
+  .sub{font-size:12.5pt;font-weight:300;color:#ecdcc6;margin-top:4mm;line-height:1.4}
+  .sub b{font-weight:500;color:#fff}
+  .qr{margin-top:7mm;background:#fff;padding:4mm;border-radius:4mm;border:0.8mm solid #c79a52}
+  .qr img{width:56mm;height:56mm;display:block}
+  .scan{margin-top:4mm;font-size:10pt;letter-spacing:.2em;text-transform:uppercase;color:#e6c88f;font-weight:500}
+  .serv{margin-top:5mm;font-size:10pt;color:#ecdcc6;font-weight:300}
+  .rod{margin-top:auto;padding-top:4mm;border-top:0.3mm solid rgba(201,164,92,.4);width:100%}
+  .nome{font-family:'Cormorant Garamond',serif;font-size:19pt;color:#fff}
+  .cargo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12pt;color:#e6c88f}
+  .aqui{font-size:9.5pt;color:#ecdcc6;margin-top:2mm}
+  @media print{body{background:none;padding:0;gap:0}.instr{display:none}.card{box-shadow:none}}
+</style>
+</head>
+<body>
+<p class="instr">Cartão A5 para o balcão da barbearia. Para imprimir: Ctrl+P → tamanho A5, margens “nenhuma”, ativar “gráficos de plano de fundo”. QR aponta para https://marcos4213.github.io/gislaine-lopes/. Gere um QR por barbearia com <code>python3 tools/gerar_qr.py "https://DOMINIO/tratamento-queda.html?origem=nome-da-barbearia"</code>.</p>
+<div class="card">
+  <div class="marca">Atelier <span class="d"></span> Tricologia</div>
+  <h1>Perdendo<br><em>cabelo?</em></h1>
+  <p class="sub">Escaneie e <b>agende sua avaliação</b><br>com uma tricologista esteta.</p>
+  <div class="qr"><img src="images/qr-code.png" alt="QR code para agendar avaliação"></div>
+  <div class="scan">Aponte a câmera do celular</div>
+  <p class="serv">Queda de cabelo · Reconstrução de barba · Sobrancelhas<br>Para homens e mulheres</p>
+  <div class="rod">
+    <div class="nome">Gislaine Lopes</div>
+    <div class="cargo">Tricologista esteta · @gislainelopes.atelier</div>
+    <div class="aqui">Atendo aqui: [dias e horários nesta barbearia]</div>
+  </div>
+</div>
+</body>
+</html>
