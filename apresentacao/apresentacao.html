@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta · Gislaine Lopes Atelier · Presença digital e conversão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:1280px 720px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:root{--verde:#2b1a12;--verde3:#4d3222;--preto:#140c08;--ouro:#c79a52;--ouro2:#e6c88f;--nude:#ecdcc6;--creme:#f8f1e7;--suave:#6b6a62}
+body{background:#333;font-family:'Jost',system-ui,sans-serif;color:#2a2a26}
+.s{width:1280px;height:720px;position:relative;overflow:hidden;margin:0 auto 24px;background:var(--creme);padding:64px 76px;page-break-after:always;break-after:page}
+@media print{body{background:none}.s{margin:0}}
+.s.d{background:radial-gradient(120% 90% at 20% 0%,var(--verde3) 0%,var(--verde) 45%,var(--preto) 100%);color:var(--creme)}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.05}
+h2{font-size:52px;color:var(--verde);margin:10px 0 26px}
+.d h2{color:#fff}
+h2 em,h1 em{color:var(--ouro);font-style:italic}
+.d h2 em,.d h1 em{color:var(--ouro2)}
+.ey{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);font-weight:500}
+.num{position:absolute;right:40px;bottom:28px;font-size:12px;letter-spacing:.2em;color:var(--ouro)}
+.marca{position:absolute;left:76px;bottom:28px;font-family:'Cormorant Garamond',serif;letter-spacing:.35em;font-size:12px;color:var(--ouro);text-transform:uppercase}
+.dm{display:inline-block;width:7px;height:7px;background:var(--ouro);transform:rotate(45deg);margin:0 10px;vertical-align:middle}
+p{font-size:19px;line-height:1.5}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.lista{list-style:none;display:grid;gap:14px}
+.lista li{font-size:19px;padding-left:30px;position:relative;line-height:1.4}
+.lista li::before{content:"";position:absolute;left:4px;top:10px;width:9px;height:9px;background:var(--ouro);transform:rotate(45deg)}
+.lista li b{color:var(--verde)}
+.d .lista li b{color:var(--ouro2)}
+.nota{font-size:14px;color:var(--suave);font-style:italic}
+.d .nota{color:rgba(232,217,197,.7)}
+/* capa */
+.capa{display:flex;flex-direction:column;justify-content:center;padding-left:110px}
+.capa::after{content:"";position:absolute;right:-120px;top:120px;width:520px;height:520px;border:1px solid rgba(201,164,92,.35);transform:rotate(45deg)}
+.capa::before{content:"";position:absolute;right:-20px;top:220px;width:320px;height:320px;border:1px solid rgba(201,164,92,.2);transform:rotate(45deg)}
+.capa h1{font-size:92px;color:#fff;margin:22px 0 10px}
+.capa .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;color:var(--ouro2)}
+.capa .por{margin-top:56px;font-size:16px;color:var(--nude);letter-spacing:.05em}
+/* cards */
+.cards{display:grid;gap:18px}
+.c{background:#fff;border:1px solid #eadfcd;border-radius:18px;padding:22px 22px}
+.d .c{background:rgba(255,255,255,.05);border-color:rgba(201,164,92,.3)}
+.c h3{font-size:28px;color:var(--verde);margin-bottom:6px}
+.d .c h3{color:var(--ouro2)}
+.c p{font-size:16px;color:var(--suave);line-height:1.45}
+.d .c p{color:var(--nude)}
+.c .n{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--ouro);line-height:1}
+/* fluxo */
+.fluxo{display:flex;align-items:stretch;gap:0;margin-top:8px}
+.passo{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(201,164,92,.3);border-radius:16px;padding:18px 16px;text-align:center;font-size:16px;color:var(--nude);display:flex;flex-direction:column;justify-content:center}
+.passo b{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:500;margin-bottom:4px}
+.passo.ruim{border-color:rgba(220,120,100,.6)}
+.passo.ruim b{color:#f0b3a3}
+.passo.bom{border-color:var(--ouro);background:rgba(201,164,92,.12)}
+.passo.bom b{color:var(--ouro2)}
+.seta{display:grid;place-items:center;width:34px;color:var(--ouro);font-size:24px}
+/* phones */
+.phones{display:flex;gap:22px;justify-content:center;align-items:flex-start;margin-top:4px}
+.phone{width:196px;border-radius:30px;padding:8px;background:#140c08;box-shadow:0 24px 50px -18px rgba(0,0,0,.55);border:1px solid #4a3426}
+.phone img{width:100%;border-radius:23px;display:block;aspect-ratio:390/780;object-fit:cover;object-position:top}
+.phone figcaption{color:var(--nude);font-size:14px;text-align:center;margin-top:10px}
+.phones figure{display:flex;flex-direction:column;align-items:center}
+.phones figure figcaption{font-size:14px;color:var(--nude);margin-top:12px;text-align:center;max-width:220px}
+.phones figure figcaption b{display:block;color:var(--ouro2);font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500}
+/* comparação */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.col{border-radius:20px;padding:24px 26px}
+.col.antes{background:#efe6d8}
+.col.depois{background:var(--verde);color:var(--creme)}
+.col h3{font-size:30px;margin-bottom:14px}
+.col.antes h3{color:#8a5a4a}
+.col.depois h3{color:var(--ouro2)}
+.col ol{list-style:none;counter-reset:k;display:grid;gap:10px}
+.col li{counter-increment:k;font-size:17px;display:grid;grid-template-columns:30px 1fr;line-height:1.35}
+.col li::before{content:counter(k);font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ouro);line-height:1}
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px;position:relative}
+.fase{border-radius:20px;padding:26px 24px;background:#fff;border:1px solid #eadfcd;position:relative}
+.fase.on{background:var(--verde);color:var(--creme);border-color:var(--verde)}
+.fase .tag{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ouro);font-weight:600}
+.fase h3{font-size:31px;color:var(--verde);margin:8px 0 12px}
+.fase.on h3{color:#fff}
+.fase ul{list-style:none;display:grid;gap:8px;font-size:16px;color:var(--suave)}
+.fase.on ul{color:var(--nude)}
+.fase li::before{content:"◆ ";color:var(--ouro);font-size:11px}
+.fase .quando{margin-top:16px;font-size:14px;font-style:italic;color:var(--ouro)}
+/* pacotes */
+.pac{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:4px}
+.pk{border-radius:20px;padding:24px 22px;background:#fff;border:1px solid #eadfcd;display:flex;flex-direction:column}
+.pk.dest{background:var(--verde);color:var(--creme);border:2px solid var(--ouro);transform:translateY(-8px);box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.pk .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);font-weight:600;min-height:14px}
+.pk h3{font-size:34px;color:var(--verde);margin:4px 0 10px}
+.pk.dest h3{color:#fff}
+.pk ul{list-style:none;display:grid;align-content:start;gap:7px;font-size:15px;color:var(--suave);flex:1}
+.pk.dest ul{color:var(--nude)}
+.pk li::before{content:"✓ ";color:var(--ouro);font-weight:600}
+.pk .preco{margin-top:14px;padding-top:12px;border-top:1px solid #eadfcd;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--verde)}
+.pk.dest .preco{border-color:rgba(201,164,92,.4);color:var(--ouro2)}
+.pk .preco small{display:block;font-family:'Jost',sans-serif;font-size:14px;color:var(--suave)}
+.pk.dest .preco small{color:var(--nude)}
+.faixa{margin-top:22px;display:flex;gap:26px;justify-content:center;font-size:15px;color:var(--verde)}
+.faixa span::before{content:"◆ ";color:var(--ouro);font-size:11px}
+.anc{background:#fff;border:1px dashed var(--ouro);border-radius:14px;padding:12px 18px;font-size:16px;margin-top:18px;text-align:center}
+.anc b{color:var(--verde)}
+.foto{border-radius:18px;overflow:hidden;border:1px solid rgba(201,164,92,.4)}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.big{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.3;color:#fff}
+.big em{color:var(--ouro2)}
+.check{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px;margin-top:10px}
+.check div{font-size:19px;display:flex;gap:14px;align-items:flex-start;line-height:1.4}
+.check div::before{content:"✓";flex:0 0 34px;height:34px;border-radius:50%;background:var(--verde);color:var(--ouro2);display:grid;place-items:center;font-size:16px}
+.check b{color:var(--verde)}
+</style>
+</head>
+<body>
+
+<!-- 1 CAPA -->
+<section class="s d capa">
+  <div class="ey">Proposta de projeto · 29/09/2026</div>
+  <h1>Gislaine Lopes <em>Atelier</em></h1>
+  <div class="sub">Presença digital que transforma interesse em avaliação agendada</div>
+  <div class="por">Preparado por Marcos Paulo</div>
+  <div class="marca">Atelier <span class="dm"></span> Tricologia</div>
+</section>
+
+<!-- 2 HOJE -->
+<section class="s">
+  <div class="grid2" style="grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;height:100%">
+    <div>
+      <div class="ey">Onde você está hoje</div>
+      <h2>O que já <em>funciona</em> (e muito)</h2>
+      <ul class="lista">
+        <li><b>Resultados reais e documentados:</b> 15 dias, 2 meses, 3 meses e o caso 02 com 90 dias.</li>
+        <li><b>Método próprio:</b> Tricho Control, com microscópio, microagulhamento, argiloterapia e home care.</li>
+        <li><b>Conteúdo que educa:</b> “calvície tem controle?”, queda feminina, barba, pensando em Maringá, Marialva e Apucarana.</li>
+        <li><b>Barbearia França e outras parcerias + teleconsulta:</b> você já está onde o seu público está.</li>
+        <li><b>Posicionamento honesto:</b> tratamento e controle, sem prometer cura.</li>
+      </ul>
+    </div>
+    <div style="display:grid;gap:12px;width:360px;justify-self:end">
+      <div class="foto" style="height:360px"><img src="../images/antes-depois-01.jpg" alt="Caso 02"></div>
+      <div class="foto" style="height:180px"><img src="../images/antes-depois-02.jpg" alt="Tricho Control 2 meses"></div>
+    </div>
+  </div>
+  <div class="num">02</div>
+</section>
+
+<!-- 3 VAZAMENTO -->
+<section class="s d">
+  <div class="ey">Onde o paciente se perde</div>
+  <h2>O interesse existe. <em>O caminho até a venda é que vaza.</em></h2>
+  <div class="fluxo">
+    <div class="passo"><b>Instagram</b>Viu um antes e depois e se interessou</div><div class="seta">→</div>
+    <div class="passo"><b>Link da bio</b>Cai direto no WhatsApp, sem contexto</div><div class="seta">→</div>
+    <div class="passo ruim"><b>“Quanto custa?”</b>Primeira pergunta, ainda frio</div><div class="seta">→</div>
+    <div class="passo ruim"><b>Preço sem valor</b>Sem entender método e resultados</div><div class="seta">→</div>
+    <div class="passo ruim"><b>Some</b>“Vou pensar” e não volta</div>
+  </div>
+  <div class="grid2" style="margin-top:34px">
+    <div class="c"><h3>Sem vitrine</h3><p>Sem consultório fixo, não existe um “lugar” que transmita autoridade. Hoje, esse lugar precisa ser digital.</p></div>
+    <div class="c"><h3>Você explicando tudo, toda vez</h3><p>Cada conversa começa do zero no WhatsApp: o que é, como funciona, se dói, se tem cura, onde atende.</p></div>
+  </div>
+  <div class="marca">Atelier <span class="dm"></span> Tricologia</div><div class="num">03</div>
+</section>
+
+<!-- 4 PROPOSTA -->
+<section class="s">
+  <div class="ey">A proposta</div>
+  <h2>Quatro peças, <em>um caminho só</em>: do interesse à avaliação</h2>
+  <div class="cards" style="grid-template-columns:repeat(4,1fr)">
+    <div class="c"><div class="n">01</div><h3>Link na bio</h3><p>Página elegante com a sua cara: quem você é, seus serviços e o botão de agendar. Substitui o link direto pro WhatsApp.</p></div>
+    <div class="c"><div class="n">02</div><h3>Página do tratamento</h3><p>Tricho Control explicado: para quem é, causas, etapas, antes e depois, dúvidas frequentes. O paciente chega no WhatsApp já entendendo o valor.</p></div>
+    <div class="c"><div class="n">03</div><h3>Onde me encontrar</h3><p>Barbearias parceiras, dias, horários e mapa, mais a teleconsulta. Resolve o “você atende onde?” e transmite estrutura.</p></div>
+    <div class="c"><div class="n">04</div><h3>QR nas barbearias</h3><p>Cartão de balcão “Perdendo cabelo? Escaneie”. Transforma o cliente da barbearia em paciente.</p></div>
+  </div>
+  <p class="nota" style="margin-top:22px">+ Mensagens prontas no WhatsApp: cada botão já abre a conversa dizendo de onde a pessoa veio e qual a queixa.</p>
+  <div class="marca">Atelier <span class="dm"></span> Tricologia</div><div class="num">04</div>
+</section>
+
+<!-- 5 PÁGINAS PRONTAS -->
+<section class="s d" style="padding-top:44px">
+  <div class="ey">Já está desenhado</div>
+  <h2 style="margin-bottom:16px;font-size:46px">Veja como fica <em>no celular do seu paciente</em></h2>
+  <div class="phones">
+    <figure><div class="phone"><img src="shots/index.png" alt=""></div><figcaption><b>Link na bio</b></figcaption></figure>
+    <figure><div class="phone"><img src="shots/queda.png" alt=""></div><figcaption><b>Tratamento de queda</b></figcaption></figure>
+    <figure><div class="phone"><img src="shots/queda-resultados.png" alt=""></div><figcaption><b>Antes e depois</b></figcaption></figure>
+    <figure><div class="phone"><img src="shots/queda-faq.png" alt=""></div><figcaption><b>Dúvidas respondidas</b></figcaption></figure>
+    <figure><div class="phone"><img src="shots/barba.png" alt=""></div><figcaption><b>Reconstrução de barba</b></figcaption></figure>
+  </div>
+  <p class="nota" style="text-align:center;margin-top:14px">Mantive a identidade visual que você já usa nos posts: marrom, dourado e creme, com tipografia elegante.</p>
+  <div class="num">05</div>
+</section>
+
+<!-- 6 JORNADA -->
+<section class="s">
+  <div class="ey">A jornada do paciente</div>
+  <h2>Antes e depois <em>(desta vez, do seu atendimento)</em></h2>
+  <div class="vs" style="grid-template-columns:1fr 1fr .62fr">
+    <div class="col antes"><h3>Hoje</h3><ol>
+      <li>Vê o post e clica no link da bio</li>
+      <li>Cai no WhatsApp sem saber o que perguntar</li>
+      <li>Pergunta o preço antes de entender o valor</li>
+      <li>Você explica tudo do zero, de novo</li>
+      <li>Ele “vai pensar” e esfria</li>
+    </ol></div>
+    <div class="col depois"><h3>Com o projeto</h3><ol>
+      <li>Vê o post ou o QR na barbearia</li>
+      <li>Conhece o método, os casos e tira as dúvidas na página</li>
+      <li>Vê onde e quando você atende</li>
+      <li>Chama no WhatsApp com a mensagem pronta: “quero agendar minha avaliação”</li>
+      <li>Você conversa com alguém que já confia em você</li>
+    </ol></div>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <img src="shots/qr-balcao.png" style="width:100%;border-radius:8px;box-shadow:0 16px 36px -14px rgba(0,0,0,.5)" alt="">
+      <p class="nota" style="margin-top:10px;text-align:center">Cartão A5 de balcão</p>
+    </div>
+  </div>
+  <div class="marca">Atelier <span class="dm"></span> Tricologia</div><div class="num">06</div>
+</section>
+
+<!-- 7 ROADMAP -->
+<section class="s">
+  <div class="ey">Roadmap</div>
+  <h2>Um passo de cada vez, <em>no ritmo do seu negócio</em></h2>
+  <div class="road">
+    <div class="fase on"><div class="tag">Fase 1 · Agora</div><h3>Presença e conversão</h3><ul>
+      <li>Link na bio</li><li>Página do Tricho Control</li><li>Página de reconstrução de barba</li><li>Onde me encontrar</li><li>QR code para as barbearias</li><li>Mensagens prontas no WhatsApp</li></ul>
+      <div class="quando">Entrega em [PRAZO] após a assinatura</div></div>
+    <div class="fase"><div class="tag">Fase 2 · Após o contrato</div><h3>Otimização</h3><ul>
+      <li>Ajustes com base no que os pacientes perguntam</li><li>Novos casos e depoimentos</li><li>Respostas rápidas no WhatsApp Business</li><li>Perfil no Google</li><li>Acompanhar de onde vêm os contatos (Instagram x QR)</li></ul>
+      <div class="quando">Contínuo, sem você precisar mexer em nada</div></div>
+    <div class="fase"><div class="tag">Fase 3 · Futuro</div><h3>Consultório + app</h3><ul>
+      <li>Página do espaço próprio</li><li>Agenda e fichas de pacientes</li><li>Histórico e fotos de evolução</li><li>Somente quando fizer sentido para você</li></ul>
+      <div class="quando">Quando o consultório sair do papel</div></div>
+  </div>
+  <div class="marca">Atelier <span class="dm"></span> Tricologia</div><div class="num">07</div>
+</section>
+
+<!-- 8 TRANSPARÊNCIA -->
+<section class="s d">
+  <div class="grid2" style="grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;height:100%">
+    <div>
+      <div class="ey">Como eu trabalho</div>
+      <h2>Simples e transparente. <em>Sem pegadinha.</em></h2>
+      <p class="big">Você cuida dos seus pacientes. <em>A parte digital fica comigo.</em></p>
+    </div>
+    <div class="cards">
+      <div class="c"><h3>Você não precisa aprender sistema</h3><p>Nada de curso, painel ou configuração. Quer mudar um horário ou uma barbearia? Me manda uma mensagem.</p></div>
+      <div class="c"><h3>Tudo combinado por escrito</h3><p>O que está incluso, prazos e valores claros desde o primeiro dia. Sem cobrança surpresa.</p></div>
+      <div class="c"><h3>Você aprova antes de ir ao ar</h3><p>Textos, fotos e preços só são publicados com o seu ok. As páginas e o conteúdo são seus.</p></div>
+    </div>
+  </div>
+  <div class="num">08</div>
+</section>
+
+<!-- 9 INVESTIMENTO (3 opções) -->
+<section class="s" style="padding-top:48px">
+  <div class="ey">Investimento</div>
+  <h2 style="margin-bottom:24px">Escolha o ponto de partida <em>ideal para agora</em></h2>
+  <div class="pac">
+    <div class="pk"><div class="tag">&nbsp;</div><h3>Essencial</h3><ul>
+      <li>Link na bio personalizado</li><li>Onde me encontrar</li><li>Botões com mensagem pronta no WhatsApp</li><li>Publicação e domínio configurados</li></ul>
+      <div class="preco">[VALOR] <small>implantação única · ou [VALOR PARCELADO]</small></div></div>
+    <div class="pk dest"><div class="tag">Recomendado</div><h3>Completo</h3><ul>
+      <li>Tudo do Essencial</li><li>Página do tratamento Tricho Control</li><li>Página de reconstrução de barba</li><li>Galeria de antes e depois + dúvidas frequentes</li><li>[N] rodadas de ajustes</li></ul>
+      <div class="preco">[VALOR] <small>implantação única · ou [VALOR PARCELADO]</small></div></div>
+    <div class="pk"><div class="tag">Mais completo</div><h3>Completo + Barbearias</h3><ul>
+      <li>Tudo do Completo</li><li>QR code e cartão de balcão A5 para cada barbearia</li><li>QR individual por barbearia: você sabe de onde veio cada paciente</li><li>Arte para os barbeiros compartilharem</li></ul>
+      <div class="preco">[VALOR] <small>implantação única · ou [VALOR PARCELADO]</small></div></div>
+  </div>
+  <div class="anc"><b>Manutenção opcional:</b> [VALOR MENSAL]/mês (hospedagem, atualizações de horários, novos casos). <b>Referência:</b> um único tratamento fechado ([TICKET]) pode pagar todo o investimento.</div>
+  <div class="num">09</div>
+</section>
+
+<!-- 10 PRÓXIMO PASSO -->
+<section class="s d capa" style="padding-left:110px">
+  <div class="ey">Próximo passo</div>
+  <h1 style="font-size:72px">Vamos colocar no ar?</h1>
+  <ul class="lista" style="margin-top:22px;max-width:760px">
+    <li>Você escolhe o pacote e a forma de pagamento</li>
+    <li>Me envia: barbearias, dias e horários, fotos autorizadas e valor da avaliação</li>
+    <li>Em [PRAZO] as páginas estão no ar, e o link da bio já é o novo</li>
+  </ul>
+  <div class="por">Marcos Paulo · [WHATSAPP DO MARCOS]</div>
+  <div class="num">10</div>
+</section>
+
+<!-- 9B ALTERNATIVA -->
+<section class="s" style="background:#fbf8f2">
+  <div class="ey">Investimento · versão alternativa (oferta única, use no lugar do slide 09 se preferir)</div>
+  <h2>Projeto Fase 1: <em>presença e conversão</em></h2>
+  <div class="grid2" style="grid-template-columns:1.1fr .9fr;gap:40px">
+    <div class="check" style="grid-template-columns:1fr">
+      <div><span><b>Link na bio</b> com a identidade do Atelier</span></div>
+      <div><span><b>Páginas de tratamento:</b> Tricho Control e reconstrução de barba</span></div>
+      <div><span><b>Onde me encontrar:</b> barbearias, dias e mapa</span></div>
+      <div><span><b>QR code + cartão A5</b> para o balcão das barbearias</span></div>
+      <div><span><b>Mensagens prontas</b> no WhatsApp</span></div>
+    </div>
+    <div class="c" style="display:flex;flex-direction:column;justify-content:center;text-align:center;border:2px solid var(--ouro)">
+      <div class="ey">Implantação</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:60px;color:var(--verde);margin:6px 0">[VALOR]</div>
+      <p style="font-size:16px;color:var(--suave)">ou [PARCELAS] de [VALOR PARCELA]</p>
+      <div style="height:1px;background:#eadfcd;margin:18px 0"></div>
+      <div class="ey">Manutenção opcional</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--verde);margin-top:6px">[VALOR]/mês</div>
+      <p style="font-size:14px;color:var(--suave)">[CONDIÇÃO: ex. sem fidelidade, cancela quando quiser]</p>
+    </div>
+  </div>
+  <div class="num">09B</div>
+</section>
+
+</body>
+</html>
