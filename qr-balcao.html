@@ -11,7 +11,6 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{background:#d9d4cb;font-family:'Jost',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 0}
-  .instr{font-size:13px;color:#444;max-width:148mm;text-align:center}
   .card{width:148mm;height:210mm;background:radial-gradient(120% 70% at 50% 0%,#4d3222 0%,#2b1a12 50%,#140c08 100%);color:#f8f1e7;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:13mm 12mm 10mm;box-shadow:0 10px 40px rgba(0,0,0,.25)}
   .card::before{content:"";position:absolute;inset:6mm;border:0.4mm solid rgba(201,164,92,.55);pointer-events:none}
   .marca{font-family:'Cormorant Garamond',serif;letter-spacing:.42em;font-size:10pt;color:#e6c88f;text-transform:uppercase}
@@ -28,11 +27,13 @@
   .nome{font-family:'Cormorant Garamond',serif;font-size:19pt;color:#fff}
   .cargo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12pt;color:#e6c88f}
   .aqui{font-size:9.5pt;color:#ecdcc6;margin-top:2mm}
-  @media print{body{background:none;padding:0;gap:0}.instr{display:none}.card{box-shadow:none}}
+  .printbar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:14px;background:rgba(20,12,8,.92);border-top:1px solid rgba(201,164,92,.4);z-index:10}
+  .printbar button{font-family:'Jost',system-ui,sans-serif;font-size:15px;font-weight:600;color:#140c08;background:linear-gradient(135deg,#e6c88f,#c79a52);border:0;border-radius:99px;padding:13px 30px;cursor:pointer;box-shadow:0 10px 24px -8px rgba(0,0,0,.5)}
+  .printbar button:active{transform:scale(.97)}
+  @media print{body{background:none;padding:0;gap:0}.printbar{display:none}.card{box-shadow:none}}
 </style>
 </head>
 <body>
-<p class="instr">Cartão A5 para o balcão da barbearia. Para imprimir: Ctrl+P → tamanho A5, margens “nenhuma”, ativar “gráficos de plano de fundo”. QR aponta para https://qr.ateliertricologista.site/?origem=balcao-mandaguari (cai no tratamento com a origem marcada). Para outra barbearia, gere um QR novo com outro valor de <code>?origem=</code>.</p>
 <div class="card">
   <div class="marca">Atelier <span class="d"></span> Tricologia</div>
   <h1>Perdendo<br><em>cabelo?</em></h1>
@@ -46,5 +47,6 @@
     <div class="aqui">Av. Amazonas, 330 – Centro, Mandaguari – PR · (44) 99919-5009</div>
   </div>
 </div>
+<div class="printbar"><button type="button" onclick="window.print()">Imprimir cartão A5</button></div>
 </body>
 </html>
