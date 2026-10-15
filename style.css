@@ -8,7 +8,7 @@
   --raio:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-family:var(--sans);color:var(--texto);background:var(--creme);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -19,7 +19,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing
 .diamante{display:inline-block;width:8px;height:8px;background:var(--ouro);transform:rotate(45deg);margin:0 10px;vertical-align:middle}
 
 /* ---------- LINK NA BIO ---------- */
-body.bio{background:radial-gradient(120% 60% at 50% 0%, var(--verde-3) 0%, var(--verde) 45%, var(--preto) 100%) fixed;color:var(--creme);min-height:100vh}
+body.bio{background:radial-gradient(120% 120% at 50% 0%, var(--verde-3) 0%, var(--verde) 45%, var(--preto) 100%);color:var(--creme);min-height:100vh}
 .bio-top{text-align:center;padding:44px 22px 10px}
 .marca{font-family:var(--serif);letter-spacing:.42em;font-size:.85rem;color:var(--ouro-2);text-transform:uppercase}
 .avatar{width:132px;height:132px;border-radius:50%;margin:22px auto 16px;padding:4px;background:linear-gradient(135deg,var(--ouro-2),var(--ouro) 50%,#8a6a2f)}
@@ -37,22 +37,22 @@ body.bio{background:radial-gradient(120% 60% at 50% 0%, var(--verde-3) 0%, var(-
 .btn-wpp{background:linear-gradient(135deg,var(--ouro-2),var(--ouro));color:var(--preto);box-shadow:0 10px 30px -10px rgba(201,164,92,.6);padding:20px 18px}
 .btn-wpp .ic{background:var(--preto);color:var(--ouro-2)}
 .btn-wpp .tx{font-size:1.08rem;font-weight:600}
-.btn-sec{background:rgba(255,255,255,.05);border:1px solid rgba(226,198,142,.28);color:var(--creme);backdrop-filter:blur(6px)}
+.btn-sec{background:rgba(255,255,255,.05);border:1px solid rgba(226,198,142,.28);color:var(--creme)}
 .btn-sec .ic{background:rgba(201,164,92,.14);color:var(--ouro-2)}
 .btn .ic img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block}
 .btn .ic svg{flex:0 0 auto}
 .btn-sec:hover{border-color:var(--ouro)}
 .btn-sutil{background:transparent;border:1px dashed rgba(226,198,142,.25);color:var(--nude);padding:12px 18px;font-size:.92rem}
 .pulso{position:relative}
-.pulso::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:0 0 0 0 rgba(226,198,142,.55);animation:pulso 2.4s infinite}
-@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(226,198,142,.5)}70%{box-shadow:0 0 0 14px rgba(226,198,142,0)}100%{box-shadow:0 0 0 0 rgba(226,198,142,0)}}
+.pulso::after{content:"";position:absolute;inset:0;border-radius:16px;border:2px solid rgba(226,198,142,.55);opacity:0;transform:scale(1);animation:pulso 2.4s infinite;pointer-events:none}
+@keyframes pulso{0%{opacity:.7;transform:scale(1)}70%{opacity:0;transform:scale(1.06)}100%{opacity:0;transform:scale(1.06)}}
 .selos{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:18px 22px 0}
 .selo{font-size:.74rem;letter-spacing:.06em;border:1px solid rgba(226,198,142,.3);color:var(--nude);border-radius:99px;padding:6px 12px}
 .rodape{text-align:center;color:rgba(232,217,197,.55);font-size:.78rem;padding:30px 22px 36px}
 .rodape a{color:var(--ouro-2);text-decoration:none}
 
 /* ---------- PÁGINAS DE SERVIÇO ---------- */
-.topo{position:sticky;top:0;z-index:20;background:rgba(43,26,18,.94);backdrop-filter:blur(8px);color:var(--creme);border-bottom:1px solid rgba(201,164,92,.25)}
+.topo{position:sticky;top:0;z-index:20;background:#2b1a12;color:var(--creme);border-bottom:1px solid rgba(201,164,92,.25)}
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
 .topo .logo{font-family:var(--serif);font-size:1.15rem;text-decoration:none;letter-spacing:.04em}
 .topo .logo span{color:var(--ouro-2);font-style:italic}
@@ -68,7 +68,7 @@ body.bio{background:radial-gradient(120% 60% at 50% 0%, var(--verde-3) 0%, var(-
 .cta.escuro{background:var(--verde);color:var(--ouro-2);box-shadow:none;border:1px solid var(--ouro)}
 .cta-nota{text-align:center;font-size:.8rem;color:var(--suave);margin-top:10px}
 .hero .cta-nota{color:rgba(232,217,197,.7)}
-section.bloco{padding:46px 0}
+section.bloco{padding:46px 0;content-visibility:auto;contain-intrinsic-size:auto 600px}
 section.bloco.alt{background:#fff}
 section.bloco.escuro{background:var(--verde);color:var(--creme)}
 section.bloco.escuro h2{color:#fff}
