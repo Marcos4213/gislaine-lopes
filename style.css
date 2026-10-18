@@ -135,6 +135,33 @@ section.bloco p+p{margin-top:10px}
 .galeria figcaption{padding:10px 14px;font-size:.84rem;color:var(--suave)}
 .galeria figcaption b{color:var(--verde);display:block;font-family:var(--serif);font-size:1.1rem}
 .dica-arraste{font-size:.78rem;color:var(--suave);text-align:right}
+/* Casos documentados (depoimentos reais) */
+.casos{display:grid;gap:18px;margin-top:20px}
+.caso{background:#fff;border:1px solid #e3d5be;border-radius:var(--raio);overflow:hidden;box-shadow:0 14px 34px -22px rgba(105,74,55,.45)}
+.caso-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px 12px}
+.caso-num{font-family:var(--serif);font-size:1.35rem;color:var(--verde);font-weight:600;letter-spacing:.02em}
+.caso-num i{font-style:normal;color:var(--ouro-deep);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;display:block;font-family:var(--sans)}
+.caso-tags{display:flex;flex-wrap:wrap;gap:6px}
+.caso-tags span{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);background:var(--creme);border:1px solid #e3d5be;border-radius:99px;padding:5px 10px;white-space:nowrap}
+.caso-foto{position:relative;line-height:0}
+.caso-foto img{width:100%;height:auto;display:block}
+.caso-foto::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;background:linear-gradient(180deg,transparent,rgba(36,22,17,.14))}
+.caso-ficha{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #efe3cf}
+.caso-ficha div{padding:12px 14px;font-size:.8rem;color:var(--suave);line-height:1.4}
+.caso-ficha div+div{border-left:1px solid #efe3cf}
+.caso-ficha b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--verde);font-weight:600;margin-bottom:2px}
+.caso-obs{padding:13px 16px;font-size:.84rem;color:var(--suave);background:var(--creme);border-top:1px solid #efe3cf;font-style:italic}
+.caso-cta{padding:14px 16px 16px;border-top:1px solid #efe3cf}
+.caso-cta .btn-wpp{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--verde);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;border-radius:12px;padding:13px 16px;transition:background .2s}
+.caso-cta .btn-wpp:hover{background:var(--verde-2)}
+.caso-cta .btn-wpp svg{width:19px;height:19px;flex:none}
+.resultados-nota{display:flex;align-items:flex-start;gap:9px;margin-top:16px;font-size:.8rem;color:var(--suave);background:#fff;border:1px dashed #d9c9a8;border-radius:12px;padding:11px 13px}
+.resultados-nota svg{width:16px;height:16px;flex:none;color:var(--ouro-deep);margin-top:2px}
+@media (max-width:520px){
+  .caso-ficha{grid-template-columns:1fr}
+  .caso-ficha div+div{border-left:0;border-top:1px solid #efe3cf}
+  .caso-top{flex-direction:column;align-items:flex-start;gap:8px}
+}
 .expectativa{display:grid;gap:12px;margin-top:18px}
 .expectativa div{background:var(--creme);border-radius:14px;padding:14px 16px;border:1px solid #e3d5be}
 .expectativa b{font-family:var(--serif);font-size:1.2rem;color:var(--verde);display:block}
