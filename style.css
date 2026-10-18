@@ -129,10 +129,12 @@ section.bloco p+p{margin-top:10px}
 .passos li::before{content:counter(p,decimal-leading-zero);font-family:var(--serif);font-size:1.5rem;color:var(--ouro-deep);border:1px solid var(--ouro-deep);border-radius:50%;width:46px;height:46px;display:grid;place-items:center}
 .passos h3{font-size:1.3rem;color:var(--verde)}
 .passos p{font-size:.93rem;color:var(--suave)}
-/* Marquee de casos (registros reais, movimento horizontal) */
-.marquee{position:relative;margin-top:24px;overflow:hidden;
+/* Marquee de casos (registros reais, movimento + rolagem manual) */
+.marquee{position:relative;margin-top:24px;overflow-x:auto;overflow-y:hidden;cursor:grab;scrollbar-width:none;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
   mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+.marquee::-webkit-scrollbar{display:none}
+.marquee:active{cursor:grabbing}
 .mq-tr{display:flex;width:max-content;animation:mq-desliza 58s linear infinite;will-change:transform}
 .marquee:hover .mq-tr{animation-play-state:paused}
 @keyframes mq-desliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -142,8 +144,6 @@ section.bloco p+p{margin-top:10px}
 .mq-card figcaption{display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:.82rem;color:var(--suave);line-height:1.3}
 .mq-card figcaption .mq-dot{width:7px;height:7px;border-radius:50%;background:var(--ouro);flex:none}
 .mq-card figcaption b{font-family:var(--serif);font-size:1.04rem;color:var(--verde);font-weight:600}
-.resultados-nota{display:flex;align-items:flex-start;gap:9px;margin-top:16px;font-size:.8rem;color:var(--suave);background:#fff;border:1px dashed #d9c9a8;border-radius:12px;padding:11px 13px}
-.resultados-nota svg{width:16px;height:16px;flex:none;color:var(--ouro-deep);margin-top:2px}
 @media (max-width:520px){
   .mq-card{width:206px}
 }
